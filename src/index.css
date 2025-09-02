@@ -6,33 +6,33 @@
 
 @layer base {
   :root {
-    /* Light theme colors */
-    --background: 0 0% 100%;
-    --foreground: 222 84% 4.9%;
+    /* Light theme colors - slightly darker */
+    --background: 0 0% 98%;
+    --foreground: 222 84% 2.9%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 84% 4.9%;
+    --card: 0 0% 96%;
+    --card-foreground: 222 84% 2.9%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 84% 4.9%;
+    --popover: 0 0% 96%;
+    --popover-foreground: 222 84% 2.9%;
 
-    /* Professional color scheme based on provided colors */
-    --primary: 193 39% 81%;  /* BBDCE5 */
-    --primary-foreground: 222 84% 4.9%;
-    --primary-glow: 193 50% 75%;
+    /* Professional color scheme based on provided colors - slightly darker */
+    --primary: 193 39% 75%;  /* BBDCE5 - darker */
+    --primary-foreground: 222 84% 2.9%;
+    --primary-glow: 193 50% 70%;
 
-    --secondary: 75 26% 91%;  /* ECEEDF */
-    --secondary-foreground: 222 84% 4.9%;
+    --secondary: 75 26% 85%;  /* ECEEDF - darker */
+    --secondary-foreground: 222 84% 2.9%;
 
-    --muted: 75 26% 91%;
-    --muted-foreground: 215 16% 46.9%;
+    --muted: 75 26% 85%;
+    --muted-foreground: 215 16% 40%;
 
-    /* Accent colors from palette */
-    --accent: 27 35% 78%;  /* D9C4B0 */
-    --accent-foreground: 222 84% 4.9%;
-    --accent-glow: 27 45% 73%;
+    /* Accent colors from palette - slightly darker */
+    --accent: 27 35% 72%;  /* D9C4B0 - darker */
+    --accent-foreground: 222 84% 2.9%;
+    --accent-glow: 27 45% 67%;
 
-    --warm-accent: 27 35% 69%;  /* CFAB8D */
+    --warm-accent: 27 35% 63%;  /* CFAB8D - darker */
     --warm-accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
