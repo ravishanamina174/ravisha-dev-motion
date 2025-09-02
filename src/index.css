@@ -2,50 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Modern Dark Theme with Vibrant Accents */
+/* Portfolio Design System - Professional Light/Dark Theme */
 
 @layer base {
   :root {
-    /* Dark theme base colors */
-    --background: 222 47% 5%;
-    --foreground: 210 40% 98%;
+    /* Light theme colors */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 4.9%;
 
-    --card: 222 47% 8%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 84% 4.9%;
 
-    --popover: 222 47% 8%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 84% 4.9%;
 
-    /* Vibrant primary gradient colors */
-    --primary: 258 90% 66%;
-    --primary-foreground: 210 40% 98%;
-    --primary-glow: 277 100% 75%;
+    /* Professional color scheme based on provided colors */
+    --primary: 193 39% 81%;  /* BBDCE5 */
+    --primary-foreground: 222 84% 4.9%;
+    --primary-glow: 193 50% 75%;
 
-    /* Secondary with subtle variations */
-    --secondary: 222 47% 12%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 75 26% 91%;  /* ECEEDF */
+    --secondary-foreground: 222 84% 4.9%;
 
-    --muted: 222 47% 10%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 75 26% 91%;
+    --muted-foreground: 215 16% 46.9%;
 
-    /* Accent colors for highlights */
-    --accent: 195 100% 50%;
-    --accent-foreground: 222 47% 5%;
-    --accent-glow: 195 100% 70%;
+    /* Accent colors from palette */
+    --accent: 27 35% 78%;  /* D9C4B0 */
+    --accent-foreground: 222 84% 4.9%;
+    --accent-glow: 27 45% 73%;
+
+    --warm-accent: 27 35% 69%;  /* CFAB8D */
+    --warm-accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 222 47% 15%;
-    --input: 222 47% 12%;
-    --ring: 258 90% 66%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 193 39% 81%;
 
     --radius: 0.75rem;
 
-    /* Custom gradient definitions */
-    --gradient-primary: linear-gradient(135deg, hsl(258 90% 66%) 0%, hsl(277 100% 75%) 50%, hsl(195 100% 70%) 100%);
-    --gradient-secondary: linear-gradient(135deg, hsl(222 47% 8%) 0%, hsl(222 47% 12%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(258 90% 66% / 0.1) 0%, hsl(277 100% 75% / 0.05) 50%, hsl(195 100% 70% / 0.1) 100%);
+    /* Professional gradient definitions */
+    --gradient-primary: linear-gradient(135deg, hsl(193 39% 81%) 0%, hsl(75 26% 91%) 50%, hsl(27 35% 78%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(75 26% 91%) 0%, hsl(193 39% 81%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(193 39% 81% / 0.1) 0%, hsl(75 26% 91% / 0.05) 50%, hsl(27 35% 78% / 0.1) 100%);
 
     /* Animation variables */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -73,27 +75,45 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  /* Light mode (kept for potential future use) */
-  .light {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 11%;
-    --card: 210 40% 98%;
-    --card-foreground: 222 47% 11%;
-    --popover: 210 40% 98%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 258 90% 66%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 92%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 16% 47%;
-    --accent: 195 100% 50%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214 32% 91%;
-    --input: 214 32% 91%;
-    --ring: 258 90% 66%;
+  /* Dark mode */
+  .dark {
+    --background: 222 84% 4.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 222 84% 4.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 222 84% 4.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 193 39% 81%;
+    --primary-foreground: 222 84% 4.9%;
+    --primary-glow: 193 50% 75%;
+
+    --secondary: 217 32% 17.5%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 217 32% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 27 35% 78%;
+    --accent-foreground: 222 84% 4.9%;
+    --accent-glow: 27 45% 73%;
+
+    --warm-accent: 27 35% 69%;
+    --warm-accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 217 32% 17.5%;
+    --input: 217 32% 17.5%;
+    --ring: 193 39% 81%;
+
+    /* Dark mode gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(193 39% 81% / 0.8) 0%, hsl(75 26% 91% / 0.6) 50%, hsl(27 35% 78% / 0.8) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(217 32% 17.5%) 0%, hsl(217 32% 20%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(193 39% 81% / 0.1) 0%, hsl(75 26% 91% / 0.05) 50%, hsl(27 35% 78% / 0.1) 100%);
   }
 }
 

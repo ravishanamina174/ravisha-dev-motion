@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Code, Sparkles } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
+import { ThemeToggle } from './ThemeToggle';
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -50,16 +51,39 @@ const Navigation = () => {
     >
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Professional Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="font-bold text-xl gradient-text"
+            className="flex items-center space-x-3"
           >
-            Ravisha Abeysekara
+            <div className="relative">
+              <motion.div
+                whileHover={{ rotate: 180 }}
+                transition={{ duration: 0.5 }}
+                className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center shadow-lg"
+              >
+                <Code className="w-5 h-5 text-white" />
+              </motion.div>
+              <motion.div
+                animate={{ scale: [1, 1.2, 1] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="absolute -top-1 -right-1 w-3 h-3"
+              >
+                <Sparkles className="w-3 h-3 text-warm-accent" />
+              </motion.div>
+            </div>
+            <div className="hidden sm:flex flex-col">
+              <span className="font-bold text-lg gradient-text leading-tight">
+                Ravisha
+              </span>
+              <span className="text-xs text-muted-foreground font-medium">
+                Software Engineer
+              </span>
+            </div>
           </motion.div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -71,21 +95,24 @@ const Navigation = () => {
               </button>
             ))}
             <Link to="/blog">
-              <Button variant="outline" className="btn-glow">
+              <Button variant="outline" className="btn-glow bg-warm-accent hover:bg-warm-accent/90 text-warm-accent-foreground border-warm-accent">
                 Blog
               </Button>
             </Link>
+            <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <Button
-            variant="ghost"
-            size="sm"
-            className="md:hidden"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          >
-            {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </Button>
+          {/* Mobile Menu Button & Theme Toggle */}
+          <div className="flex items-center space-x-2 md:hidden">
+            <ThemeToggle />
+            <Button
+              variant="ghost"
+              size="sm"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            </Button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
