@@ -2,6 +2,9 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { Button } from '@/components/ui/button';
 import { ArrowDown, ExternalLink, MessageCircle } from 'lucide-react';
+import professionalImg from '@/assets/ravisha-professional.png';
+import casualImg from '@/assets/ravisha-casual.png';
+import workspaceImg from '@/assets/ravisha-workspace.png';
 
 const HeroSection = () => {
   const scrollToSection = (sectionId: string) => {
@@ -39,35 +42,127 @@ const HeroSection = () => {
         ))}
       </div>
 
-      <div className="container mx-auto px-4 text-center relative z-10">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center lg:text-left"
+          >
+            {/* Greeting */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.6 }}
+              className="text-lg text-muted-foreground mb-4"
+            >
+              Hi there! 👋
+            </motion.p>
+
+            {/* Main title with typing animation */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4, duration: 0.6 }}
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-balance"
+            >
+              I'm{' '}
+              <span className="gradient-text">
+                Ravisha Abeysekara
+              </span>
+            </motion.h1>
+          </motion.div>
+
+          {/* Right Images Grid */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="relative"
+          >
+            {/* Main Professional Image */}
+            <motion.div
+              className="relative z-10"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 p-1">
+                <img
+                  src={professionalImg}
+                  alt="Ravisha Abeysekara - Professional"
+                  className="w-full h-[400px] object-cover rounded-xl"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent rounded-xl" />
+              </div>
+            </motion.div>
+
+            {/* Floating Secondary Images */}
+            <motion.div
+              className="absolute -top-8 -right-8 w-32 h-32 z-20"
+              animate={{ 
+                y: [0, -10, 0],
+                rotate: [0, 5, 0]
+              }}
+              transition={{ 
+                duration: 4,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }}
+            >
+              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-secondary/30 to-warm-accent/30 p-1">
+                <img
+                  src={casualImg}
+                  alt="Ravisha Abeysekara - Casual"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="absolute -bottom-6 -left-6 w-36 h-28 z-20"
+              animate={{ 
+                y: [0, 8, 0],
+                rotate: [0, -3, 0]
+              }}
+              transition={{ 
+                duration: 5,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 1
+              }}
+            >
+              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-accent/30 to-primary/30 p-1">
+                <img
+                  src={workspaceImg}
+                  alt="Ravisha Abeysekara - Workspace"
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </motion.div>
+
+            {/* Decorative Elements */}
+            <motion.div
+              className="absolute top-1/4 -left-4 w-8 h-8 bg-primary/30 rounded-full blur-sm"
+              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
+            <motion.div
+              className="absolute bottom-1/4 -right-4 w-6 h-6 bg-accent/40 rounded-full blur-sm"
+              animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 1.5 }}
+            />
+          </motion.div>
+        </div>
+
+        {/* Centered Content Below */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-4xl mx-auto"
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mt-16 max-w-4xl mx-auto"
         >
-          {/* Greeting */}
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2, duration: 0.6 }}
-            className="text-lg text-muted-foreground mb-4"
-          >
-            Hi there! 👋
-          </motion.p>
-
-          {/* Main title with typing animation */}
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.4, duration: 0.6 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-balance"
-          >
-            I'm{' '}
-            <span className="gradient-text">
-              Ravisha Abeysekara
-            </span>
-          </motion.h1>
 
           {/* Subtitle with typing effect */}
           <motion.div

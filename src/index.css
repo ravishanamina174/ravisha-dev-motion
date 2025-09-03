@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    /* Light theme colors - slightly darker */
+    /* Light theme colors - darker for better visibility */
     --background: 0 0% 98%;
-    --foreground: 222 84% 2.9%;
+    --foreground: 222 84% 4%;
 
     --card: 0 0% 96%;
-    --card-foreground: 222 84% 2.9%;
+    --card-foreground: 222 84% 4%;
 
     --popover: 0 0% 96%;
-    --popover-foreground: 222 84% 2.9%;
+    --popover-foreground: 222 84% 4%;
 
-    /* Professional color scheme based on provided colors - slightly darker */
-    --primary: 193 39% 75%;  /* BBDCE5 - darker */
-    --primary-foreground: 222 84% 2.9%;
-    --primary-glow: 193 50% 70%;
+    /* Professional color scheme - darker for better contrast */
+    --primary: 193 45% 45%;  /* BBDCE5 - much darker */
+    --primary-foreground: 0 0% 98%;
+    --primary-glow: 193 50% 55%;
 
-    --secondary: 75 26% 85%;  /* ECEEDF - darker */
-    --secondary-foreground: 222 84% 2.9%;
+    --secondary: 75 30% 55%;  /* ECEEDF - much darker */
+    --secondary-foreground: 0 0% 98%;
 
     --muted: 75 26% 85%;
-    --muted-foreground: 215 16% 40%;
+    --muted-foreground: 215 20% 25%;
 
     /* Accent colors from palette - slightly darker */
     --accent: 27 35% 72%;  /* D9C4B0 - darker */
