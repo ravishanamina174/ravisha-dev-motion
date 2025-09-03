@@ -75,84 +75,122 @@ const HeroSection = () => {
             </motion.h1>
           </motion.div>
 
-          {/* Right Images Grid */}
+          {/* Dynamic Images Collection */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="relative"
+            className="relative h-[500px] w-full max-w-lg mx-auto"
           >
-            {/* Main Professional Image */}
+            {/* Central Professional Image */}
             <motion.div
-              className="relative z-10"
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 p-1">
-                <img
-                  src={professionalImg}
-                  alt="Ravisha Abeysekara - Professional"
-                  className="w-full h-[400px] object-cover rounded-xl"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent rounded-xl" />
-              </div>
-            </motion.div>
-
-            {/* Floating Secondary Images */}
-            <motion.div
-              className="absolute -top-8 -right-8 w-32 h-32 z-20"
+              className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30"
+              whileHover={{ scale: 1.05, zIndex: 40 }}
               animate={{ 
-                y: [0, -10, 0],
-                rotate: [0, 5, 0]
+                y: [0, -8, 0],
+                rotate: [0, 1, 0]
               }}
               transition={{ 
-                duration: 4,
+                duration: 6,
                 repeat: Infinity,
                 ease: "easeInOut"
               }}
             >
-              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-secondary/30 to-warm-accent/30 p-1">
+              <div className="relative w-48 h-56 rounded-3xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary via-primary/80 to-accent p-[3px]">
                 <img
-                  src={casualImg}
-                  alt="Ravisha Abeysekara - Casual"
-                  className="w-full h-full object-cover rounded-lg"
+                  src={professionalImg}
+                  alt="Ravisha Abeysekara - Professional"
+                  className="w-full h-full object-cover rounded-3xl bg-background"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-accent/10 rounded-3xl" />
               </div>
             </motion.div>
 
+            {/* Top-Right Casual Image */}
             <motion.div
-              className="absolute -bottom-6 -left-6 w-36 h-28 z-20"
+              className="absolute top-8 right-4 z-20"
+              whileHover={{ scale: 1.1, rotate: 5, zIndex: 35 }}
               animate={{ 
-                y: [0, 8, 0],
-                rotate: [0, -3, 0]
+                y: [0, -12, 0],
+                rotate: [8, 15, 8],
+                x: [0, 5, 0]
               }}
               transition={{ 
-                duration: 5,
+                duration: 7,
                 repeat: Infinity,
                 ease: "easeInOut",
                 delay: 1
               }}
             >
-              <div className="relative overflow-hidden rounded-xl bg-gradient-to-br from-accent/30 to-primary/30 p-1">
+              <div className="relative w-32 h-40 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-accent via-accent/80 to-secondary p-[2px]">
                 <img
-                  src={workspaceImg}
-                  alt="Ravisha Abeysekara - Workspace"
-                  className="w-full h-full object-cover rounded-lg"
+                  src={casualImg}
+                  alt="Ravisha Abeysekara - Casual"
+                  className="w-full h-full object-cover rounded-2xl bg-background"
                 />
+                <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-secondary/10 rounded-2xl" />
               </div>
             </motion.div>
 
-            {/* Decorative Elements */}
+            {/* Bottom-Left Workspace Image */}
             <motion.div
-              className="absolute top-1/4 -left-4 w-8 h-8 bg-primary/30 rounded-full blur-sm"
-              animate={{ scale: [1, 1.2, 1], opacity: [0.5, 0.8, 0.5] }}
-              transition={{ duration: 3, repeat: Infinity }}
+              className="absolute bottom-12 left-2 z-25"
+              whileHover={{ scale: 1.08, rotate: -3, zIndex: 35 }}
+              animate={{ 
+                y: [0, 10, 0],
+                rotate: [-5, -12, -5],
+                x: [0, -3, 0]
+              }}
+              transition={{ 
+                duration: 8,
+                repeat: Infinity,
+                ease: "easeInOut",
+                delay: 2
+              }}
+            >
+              <div className="relative w-36 h-28 rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-secondary via-secondary/80 to-primary p-[2px]">
+                <img
+                  src={workspaceImg}
+                  alt="Ravisha Abeysekara - Workspace"
+                  className="w-full h-full object-cover rounded-2xl bg-background"
+                />
+                <div className="absolute inset-0 bg-gradient-to-tr from-secondary/20 to-primary/10 rounded-2xl" />
+              </div>
+            </motion.div>
+
+            {/* Floating Decorative Elements */}
+            <motion.div
+              className="absolute top-20 left-8 w-3 h-3 bg-primary rounded-full opacity-60"
+              animate={{ 
+                scale: [1, 1.5, 1],
+                opacity: [0.6, 1, 0.6],
+                y: [0, -15, 0]
+              }}
+              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
             />
             <motion.div
-              className="absolute bottom-1/4 -right-4 w-6 h-6 bg-accent/40 rounded-full blur-sm"
-              animate={{ scale: [1, 1.3, 1], opacity: [0.4, 0.7, 0.4] }}
-              transition={{ duration: 4, repeat: Infinity, delay: 1.5 }}
+              className="absolute bottom-24 right-12 w-2 h-2 bg-accent rounded-full opacity-70"
+              animate={{ 
+                scale: [1, 1.3, 1],
+                opacity: [0.7, 1, 0.7],
+                x: [0, 10, 0]
+              }}
+              transition={{ duration: 5, repeat: Infinity, delay: 1.5 }}
             />
+            <motion.div
+              className="absolute top-32 right-20 w-4 h-4 bg-secondary/50 rounded-full opacity-50"
+              animate={{ 
+                scale: [1, 1.2, 1],
+                opacity: [0.5, 0.8, 0.5],
+                rotate: [0, 180, 360]
+              }}
+              transition={{ duration: 6, repeat: Infinity, delay: 3 }}
+            />
+
+            {/* Subtle Glow Effects */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-radial from-primary/10 via-accent/5 to-transparent rounded-full blur-3xl -z-10" />
+            <div className="absolute top-8 right-4 w-40 h-40 bg-gradient-radial from-accent/8 to-transparent rounded-full blur-2xl -z-10" />
+            <div className="absolute bottom-12 left-2 w-44 h-32 bg-gradient-radial from-secondary/8 to-transparent rounded-full blur-2xl -z-10" />
           </motion.div>
         </div>
 
